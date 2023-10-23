@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="{{ str_replace('_', '-', app()->getLocale()) }}">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@yield('title')</title>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
+
+<body>
+    <div class="wrapper">
+        <div class="container">
+            <div class="wrapper_content">
+                @yield('sideBar')
+                <div class="main_content">
+                    @yield('header')
+                    @yield('infoMain')
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
