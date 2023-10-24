@@ -16,6 +16,7 @@ class voitureController extends Controller
     public function index()
     {
         //
+        
         $voitures = Voiture::paginate(9); // Paginate with 9 items per page
         return view('voitures.addVoiture', ['voitures' => $voitures]);
         //dd($voitures);
@@ -55,8 +56,9 @@ class voitureController extends Controller
 
         foreach ($request->file('images') as $image) {
             $imageName = time() . '_' . $image->getClientOriginalName();
-            $image->storeAs('project_images', $imageName, 'public');
-            $imagePaths[] = 'project_images/' . $imageName;
+           $path= $image->storeAs('project_images', $imageName);
+            //dd($image->storeAs('project_images', $imageName, 'public'));
+            array_push($imagePaths, $path);
         }
 
         // Create a new Voiture and save it to the database
@@ -65,7 +67,7 @@ class voitureController extends Controller
         $voiture->color = $request->color;
         $voiture->price = $request->price;
         $voiture->description = $request->description;
-        $voiture->images = json_encode($imagePaths); // Store image paths as JSON
+        $voiture->images = $imagePaths; // Store image paths as JSON
         $voiture->id_categorie = $request->id_categorie;
         $voiture->save(); // Save the Voiture object
 

@@ -6,7 +6,7 @@
                     <div class="voitureBox-image">
                         <a href="{{ route('details', ['id' => $item->id]) }}">
                             @if (!empty($item->images))
-                                <img src="{{asset ($item->images)}}" alt="{{ $item->name }}">
+                                <img src="{{ asset($item->images[0])}}" alt="{{ $item->name }}">
                             @endif
                         </a>
                     </div>
@@ -15,7 +15,7 @@
                             <strong>{{ $item->name }}</strong> <br>/
                             {{ $item->description }}/ <br>
                             {{ $item->color }}/
-                            prix : {{ $item->price }}
+                            prix : {{ $item->price }} €
                         </p>
                     </div>
                 </div>

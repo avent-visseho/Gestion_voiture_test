@@ -16,6 +16,10 @@ body {
     background-color: var(--primary-bg);
 }
 
+img{
+    width: 100%;
+    height: 100%;
+}
 
 .wrapper .container .wrapper_content {
     display: flex;
@@ -157,6 +161,11 @@ body {
 .voitureBox-image {
     height: 200px;
     width: 100%;
+    overflow: hidden;
+}
+
+.voitureBox-image a{
+    display: block;
 }
 
 .pagination {
@@ -222,4 +231,41 @@ body {
     border-radius: 4px;
     border: solid 1px #ccc;
     display: inline-block;
+}
+
+.banner-voitureTop-content{
+    width: 900px;
+    border: solid 2px #000;
+    display: flex;
+}
+
+.banner-voitureLeft-imageBox{
+    width: 400px;
+    height: 300px;
+    border: solid 2px #ccc;
+}
+
+.banner-voitureRight-content{
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 100%;
+    margin-left: 45px;
+    line-height: 1.9;
+}
+
+.banner-voitureBottom{
+    margin-top: 15px;
+}
+
+.banner-voitureBottom-content{
+    display: flex;
+    border: solid 2px #ccc;
+    gap: 15px;
+}
+
+.banner-voitureBottom-items{
+    width: 110px;
+    height: 110px;
+    border: solid 2px #ccc;
 }

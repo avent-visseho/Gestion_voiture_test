@@ -15,4 +15,8 @@ class Voiture extends Model
     public function categorie(){
         return $this->belongsTo(Categorie::class, 'id_categorie', 'id');
     }
+
+    public $casts = [
+        "images"=> "array",
+    ];
 }
