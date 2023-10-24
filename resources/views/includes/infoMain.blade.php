@@ -6,7 +6,7 @@
                     <div class="voitureBox-image">
                         <a href="{{ route('details', ['id' => $item->id]) }}">
                             @if (!empty($item->images))
-                                <img src="storage/project_images/{{ $item->images }}" alt="{{ $item->name }}">
+                                <img src="{{asset ($item->images)}}" alt="{{ $item->name }}">
                             @endif
                         </a>
                     </div>

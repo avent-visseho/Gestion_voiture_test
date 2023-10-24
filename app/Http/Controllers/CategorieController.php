@@ -15,11 +15,11 @@ class CategorieController extends Controller
      */
     public function index()
     {
-        //
-        $categories = Categorie::get();
-        $voitures = Voiture::get(); // Récupérez également les voitures ici
-        return view('.index', ['categories' => $categories, 'voitures' => $voitures]);
+        $categories = Categorie::all();
+        $voitures = Voiture::get();
+        return view('index', ['categories' => $categories, 'voitures' => $voitures]);
     }
+
 
     /**
      * Show the form for creating a new resource.
@@ -58,18 +58,18 @@ class CategorieController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   /*  public function show($id)
+    public function show($id)
     {
         $categorie = Categorie::find($id);
-
+        //dd($categorie);
         if ($categorie) {
             $voitures = Voiture::where('id_categorie', $categorie->id)->get();
         } else {
-            $voitures = collect(); 
+            $voitures = collect();
         }
 
         return view('categories.showVoiture', ['categorie' => $categorie, 'voitures' => $voitures]);
-    } */
+    }
 
 
 

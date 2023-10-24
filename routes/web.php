@@ -20,6 +20,8 @@ use Illuminate\Support\Facades\Route;
 Route::get('/', [CategorieController::class, 'index'])->name('categorie.index');
 Route::get('/categorie/addCategorie', [CategorieController::class, 'create'])->name('addCategorie');
 Route::post('/categorie/storeCategorie', [CategorieController::class, 'store'])->name('storeCategorie');
+Route::get('/categories/{id}', [CategorieController::class, 'show'])->name('categories.show');
+
 
 //voiture controller
 

@@ -1,15 +1,15 @@
 @extends('layouts.app')
 
-@section('title', "Add Categories")
+@section('title', "welcome to Gestion_voiture")
 
 @section('header')
     @include('includes.header')
 @endsection
 
 @section('infoMain')
-    @include('includes.categorieForm')
+    @include('categories.VoitureMore')
 @endsection
 
 @section('sideBar')
-    @include('includes.sideBar', ['categories' => $categories])
+    @include('includes.sideBar')
 @endsection

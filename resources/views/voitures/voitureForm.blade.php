@@ -8,6 +8,10 @@
                 @csrf
                 <div class="voiture-form-content">
                     <div class="input-field">
+                        <h2>Add a Car</h2>
+                    </div>
+
+                    <div class="input-field">
                         <input type="text" name="name" id="" placeholder="enter voiture name"
                             value="{{ old('name') }}">
 

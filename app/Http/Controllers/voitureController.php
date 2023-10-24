@@ -81,13 +81,10 @@ class voitureController extends Controller
      */
     public function show($id)
     {
-        // Retrieve the car details by $id from your data source (e.g., database).
-        $voitur = Voiture::find($id); // You need to replace 'Car' with your actual model name.
-
-        // Check if the car exists.
+        
+        $voitur = Voiture::find($id);
         if (!$voitur) {
-            // Handle the case when the car with the given ID is not found.
-            return abort(404); // You can customize this to your application's error handling.
+            return abort(404); 
         }
 
         // Return the car details view with the retrieved car data.

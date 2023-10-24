@@ -11,4 +11,8 @@ class Voiture extends Model
 
     protected $fillable = ['name','color','price','description','images','id_categorie'];
     protected $table = 'voitures';
+
+    public function categorie(){
+        return $this->belongsTo(Categorie::class, 'id_categorie', 'id');
+    }
 }
