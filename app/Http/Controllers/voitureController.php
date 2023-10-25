@@ -88,6 +88,7 @@ class voitureController extends Controller
         if (!$voitur) {
             return abort(404); 
         }
+        $categories = Categorie::get();
 
         // Return the car details view with the retrieved car data.
         return view('voitures.details', compact('voitur'));

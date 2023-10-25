@@ -63,11 +63,11 @@ class CategorieController extends Controller
         $categorie = Categorie::find($id);
         //dd($categorie);
         if ($categorie) {
-            $voitures = Voiture::where('id_categorie', $categorie->id)->get();
+            $voitures = Voiture::where('id_categorie', $id)->with('categorie')->get();
+            //dd($voitures);
         } else {
             $voitures = collect();
         }
-
         return view('categories.showVoiture', ['categorie' => $categorie, 'voitures' => $voitures]);
     }
 

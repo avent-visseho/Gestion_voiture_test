@@ -166,6 +166,8 @@ img{
 
 .voitureBox-image a{
     display: block;
+    width: 100%;
+    height: 100%;
 }
 
 .pagination {
@@ -235,7 +237,6 @@ img{
 
 .banner-voitureTop-content{
     width: 900px;
-    border: solid 2px #000;
     display: flex;
 }
 
@@ -260,12 +261,19 @@ img{
 
 .banner-voitureBottom-content{
     display: flex;
-    border: solid 2px #ccc;
+    align-items: center;
+}
+
+.banner-voitureBottom-content-left{
+    display: flex;
     gap: 15px;
 }
 
 .banner-voitureBottom-items{
     width: 110px;
     height: 110px;
-    border: solid 2px #ccc;
+}
+
+.detailDescription-content{
+    padding-top: 25px;
 }
