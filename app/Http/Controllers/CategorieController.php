@@ -57,19 +57,28 @@ class CategorieController extends Controller
      *
      * @param  int  $id
      * @return \Illuminate\Http\Response
-     */
-    public function show($id)
+     */ public function show($id)
     {
         $categorie = Categorie::find($id);
-        //dd($categorie);
+        $voiture = Voiture::find($id)->with('categorie')->get();
+        dd($voiture);
+
         if ($categorie) {
-            $voitures = Voiture::where('id_categorie', $id)->with('categorie')->get();
-            //dd($voitures);
+
+            // Récupérez les 4 dernières voitures de cette catégorie
+            $recentVoitures = Voiture::where('id_categorie', $id)
+                ->orderBy('created_at', 'desc')
+                ->take(4)
+                ->get();
         } else {
             $voitures = collect();
+            $recentVoitures = collect(); 
         }
-        return view('categories.showVoiture', ['categorie' => $categorie, 'voitures' => $voitures]);
+
+        return view('categories.showVoiture', ['categorie' => $categorie, 'voitures' => $voitures, 'recentVoitures' => $recentVoitures]);
     }
+
+
 
 
 

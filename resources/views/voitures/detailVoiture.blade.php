@@ -1,4 +1,6 @@
-<div class="info">
+
+
+@endphp <div class="info">
     <div class="info-content">
         <div class="banner-voiture">
             <div class="banner-voitureTop-content">
@@ -41,6 +43,31 @@
                         {{ $voitur->description }}</p>
                 </div>
             </div>
+            <br>
+            <hr>
+            <div class="recentCare-content">
+                <div class="allVoiture-content">
+                    @foreach ($recentVoitures as $recent)
+                        <div class="voitureBox">
+                            <div class="voitureBox-image">
+                                <a href="{{ route('details', ['id' => $recent->id]) }}">
+                                    @if (!empty($recent->images))
+                                        <img src="{{ asset($recent->images[0]) }}" alt="{{ $recent->name }}">
+                                    @endif
+                                </a>
+                            </div>
+                            <div class="voiture-name">
+                                <p>
+                                    <strong>{{ $recent->name }}</strong> <br>/
+                                    {{ $recent->description }}/ <br>
+                                    {{ $recent->color }}/
+                                    prix : {{ $recent->price }} €
+                                </p>
+                            </div>
+                        </div>
+                    @endforeach
+                </div>
+            </div>
         </div>
     </div>
-</div>
+    </div>

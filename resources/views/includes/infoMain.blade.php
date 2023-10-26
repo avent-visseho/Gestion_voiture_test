@@ -5,9 +5,9 @@
                 <div class="voitureBox">
                     <div class="voitureBox-image">
                         <a href="{{ route('details', ['id' => $item->id]) }}">
-                            @if (!empty($item->images))
-                                <img src="{{ asset($item->images[0])}}" alt="{{ $item->name }}">
-                            @endif
+                            {{-- @if (!empty($item->images))
+                            @endif --}}
+                            <img src="{{ asset($item->images[0])}}" alt="{{ $item->name }}">
                         </a>
                     </div>
                     <div class="voiture-name">
